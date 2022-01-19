@@ -10,6 +10,65 @@
     </head>
 
     <body>
-      
+        <Div id="container">
+            <div id="content">
+                <h2>Hello, Jessica</h2>
+                <h4>Today, 18-01-2022</h4>
+            </div>
+        </Div>
+
+        <div class="flex-grid">
+            <div class="col">
+                <h2>Add Story</h2>
+                <form action="/action_page.php">
+                    <label for="fname">Title</label>
+                    <input type="text" id="title"  placeholder="Your title..">
+                
+                    <label for="lname">Date</label>
+                    <input type="date" id="lname" name="lastname" placeholder="Your last name..">
+
+                    <label for="lname">Body</label>
+                    <textarea placeholder="Write yor Story Here" cols="30" rows="5" ></textarea>
+                
+
+                  
+                    <input type="submit" value="Submit">
+                  </form>
+            </div>
+            <div class="col">
+                <h2>Stories</h2>
+                <input type="text" id="mySearch" onkeyup="filterStories()" placeholder="Search..">
+                
+                <ul id="myMenu">
+                  <li>
+                    
+                      <div class="flex-grid">
+                            <div class="col2" id='f'>
+                                Test
+                            </div>
+
+                            <div class="col2">
+                                <a href='' id='delBtn' ><img id='imgBtn' src="./assets/delete-icon-14.jpg" alt="Delete" /></a>
+                            </div>
+                      </div>
+                  </li>
+
+                  <li>
+                    
+                    <div class="flex-grid">
+                          <div class="col2" id='f'>
+                              Football Match
+                          </div>
+
+                          <div class="col2">
+                              <a href='' id='delBtn' ><img id='imgBtn' src="./assets/delete-icon-14.jpg" alt="Delete" /></a>
+                          </div>
+                    </div>
+                </li>
+
+                </ul>
+            </div>
+          </div>
+          
     </body>
 </html>
