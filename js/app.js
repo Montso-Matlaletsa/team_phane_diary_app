@@ -4,7 +4,7 @@ window.onload = () =>{
     showStories(getStories());
 }
 
-
+//Search a story
 const filterStories = ()=>{
 
     let filter = document.querySelector('#mySearch').value;
@@ -20,7 +20,7 @@ const filterStories = ()=>{
     }
 }
 
-
+//Create and store stories to the localhost
 const store = (event) =>{
     event.preventDefault();
     let title = document.querySelector('#title').value;
@@ -40,12 +40,13 @@ const store = (event) =>{
     ;
 
     localStorage.setItem(id, JSON.stringify(details));
+    resetForm()
     location.reload();
 }
 
 
 
-
+//get the stories from localstorage
 const getStories = () => {
     let stories = [];
 
@@ -62,6 +63,8 @@ const getStories = () => {
     return stories;
 }
 
+
+//Display stories to the screen
 const showStories = (stories) =>{
     var ul = document.createElement("ul");
     for(let story of stories){
@@ -82,7 +85,7 @@ const showStories = (stories) =>{
                           '</div>'+
 
                           '<div class="col2">'+
-                              '<a id="d" onclick="deleteS()" value="'+story.id+'" class="delBtn" >'+story.id+'</a>'+
+                              '<a id="d" onclick="deleteS()" value="'+story.id+'" class="delBtn" ><img src="./assets/delete-icon-14.jpg" class="imgBtn"  alt="Delete"/></a>'+
                           '</div>'+
                     '</div>';
 
@@ -95,11 +98,22 @@ document.getElementById("myMenu").appendChild(ul);
     
 }
 
+//delete a  story
 const deleteS = () =>{
     let a = '';
      a = document.getElementById('d').value;
    
     console.log(a);
+}
+
+const resetForm = () =>{
+    let title = document.querySelector('#title');
+    let date = document.querySelector('#date');
+    let body = document.querySelector('#body');
+
+    title.value = '';
+    body.value = '';
+    date.value = ''
 }
 
 
