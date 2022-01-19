@@ -5,10 +5,6 @@ body{
     height: 100%;
 }
 
-h2{
-
-}
-
 #container{
     margin: 20px;
     background-color: #DFE8F7;
@@ -101,7 +97,6 @@ h2{
 
   #myMenu li:hover {
     background-color: #2B5CB6;
-     cursor: pointer;
      color: white;
 }
 
@@ -119,19 +114,18 @@ h2{
 
   }
 
-  #delBtn{
+  .delBtn{
     float: right;
   }
 
-  #delBtn:hover{
+  .delBtn:hover{
     text-decoration: none;
     background-color: #2B5CB6;
   }
 
-  #imgBtn{
+  .imgBtn{
     width: 10%;
     float: right;
   }
- 
-  
 
+  

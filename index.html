@@ -20,53 +20,29 @@
         <div class="flex-grid">
             <div class="col">
                 <h2>Add Story</h2>
-                <form action="/action_page.php">
-                    <label for="fname">Title</label>
+                <form action='' method="post" id='my-form' onsubmit="store(event)" >
+                    <label for="title">Title</label>
                     <input type="text" id="title"  placeholder="Your title..">
                 
-                    <label for="lname">Date</label>
-                    <input type="date" id="lname" name="lastname" placeholder="Your last name..">
+                    <label for="date">Date</label>
+                    <input type="date" id="date" name="date">
 
-                    <label for="lname">Body</label>
-                    <textarea placeholder="Write yor Story Here" cols="30" rows="5" ></textarea>
+                    <label for="body">Body</label>
+                    <textarea placeholder="Write yor Story Here" id="body" cols="30" rows="5" ></textarea>
                 
 
                   
-                    <input type="submit" value="Submit">
+                    <input type="submit" value="Submit"   >
                   </form>
             </div>
             <div class="col">
                 <h2>Stories</h2>
                 <input type="text" id="mySearch" onkeyup="filterStories()" placeholder="Search..">
                 
-                <ul id="myMenu">
-                  <li>
-                    
-                      <div class="flex-grid">
-                            <div class="col2" id='f'>
-                                Test
-                            </div>
+                <div id="myMenu">
 
-                            <div class="col2">
-                                <a href='' id='delBtn' ><img id='imgBtn' src="./assets/delete-icon-14.jpg" alt="Delete" /></a>
-                            </div>
-                      </div>
-                  </li>
 
-                  <li>
-                    
-                    <div class="flex-grid">
-                          <div class="col2" id='f'>
-                              Football Match
-                          </div>
-
-                          <div class="col2">
-                              <a href='' id='delBtn' ><img id='imgBtn' src="./assets/delete-icon-14.jpg" alt="Delete" /></a>
-                          </div>
-                    </div>
-                </li>
-
-                </ul>
+                </div>
             </div>
           </div>
           
