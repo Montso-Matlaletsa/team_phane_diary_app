@@ -10,6 +10,41 @@
     </head>
 
     <body>
-        <h1>App Is coming soon</h1>
+        <Div id="container">
+            <div id="content">
+                <h2>Hello, Jessica</h2>
+                <h4>Today, 18-01-2022</h4>
+            </div>
+        </Div>
+
+        <div class="flex-grid">
+            <div class="col">
+                <h2>Add Story</h2>
+                <form action='' method="post" id='my-form' onsubmit="store(event)" >
+                    <label for="title">Title</label>
+                    <input type="text" id="title"  placeholder="Your title..">
+                
+                    <label for="date">Date</label>
+                    <input type="date" id="date" name="date">
+
+                    <label for="body">Body</label>
+                    <textarea placeholder="Write yor Story Here" id="body" cols="30" rows="5" ></textarea>
+                
+
+                  
+                    <input type="submit" value="Submit"   >
+                  </form>
+            </div>
+            <div class="col">
+                <h2>Stories</h2>
+                <input type="text" id="mySearch" onkeyup="filterStories()" placeholder="Search..">
+                
+                <div id="myMenu">
+
+                        
+                </div>
+            </div>
+          </div>
+          
     </body>
 </html>
