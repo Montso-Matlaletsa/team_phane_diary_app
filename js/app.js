@@ -40,7 +40,7 @@ const store = (event) =>{
     ;
 
     localStorage.setItem(id, JSON.stringify(details));
-    resetForm()
+    resetForm();
     location.reload();
 }
 
@@ -80,26 +80,39 @@ const showStories = (stories) =>{
 
                                 '<div class="col2">'+
                                     story.title+
+                                    '<br />'+
+                                    '<span class="date-label" id="datet" onClick="showDate()">'+story.date+'</span>'+
                                 '</div>'+
                             '</div>'+
                           '</div>'+
-
                           '<div class="col2">'+
-                              '<a id="d" onclick="deleteS()" value="'+story.id+'" class="delBtn" ><img src="./assets/delete-icon-14.jpg" class="imgBtn"  alt="Delete"/></a>'+
+
+                            '<div class="flex-grid">'+
+                          '<div class="col2">'+
+                                '<form onsubmit="updateStory(event)">'+
+                                    '<input type="hidden" id="story_id" value="'+story.id+'"  />'+
+                                    '<button type="submit" class="delBtn" ><img src="./assets/edit.jpg" class="imgBtn"  alt="Delete"/></button>'+
+                              '</form>'+
+                          '</div>'+
+                                
+                                '<div class="col2">'+
+                                    '<button id="d"  value="'+story.id+'" class="delBtn" ><img src="./assets/delete-icon-14.jpg" class="imgBtn"  alt="Delete"/></button>'+
+                                '</div>'+
+                            '</div>'+
                           '</div>'+
                     '</div>';
 
-                    console.log(story.id)
-
         ul.appendChild(li);
     }
+
+    
 
 document.getElementById("myMenu").appendChild(ul);
     
 }
 
 //delete a  story
-const deleteS = () =>{
+const deleteStory = () =>{
     let a = '';
      a = document.getElementById('d').value;
    
@@ -115,6 +128,21 @@ const resetForm = () =>{
     body.value = '';
     date.value = ''
 }
+
+
+
+const updateStory = (e) => {
+    e.preventDefault();
+    let id = document.querySelector('#story_id').value;
+    alert(id)
+}
+
+const showDate = (e) => {
+    let date = document.getElementById('#datet').innerHTML;
+    alert(date)
+}
+
+
 
 
   
