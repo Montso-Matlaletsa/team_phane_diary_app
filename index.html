@@ -37,7 +37,7 @@
                 <div id="myForm">
                         
                     <h2>Update Story</h2>
-                    <form action='' method="post" id='my-form' onsubmit="updateStory()" >
+                    <form action='' method="post" id='my-form' onsubmit="updateStory(event)" >
                         <label for="title">Title</label>
                         <input type="text" id="update_title"  placeholder="Your title.." value="">
                         <input type="hidden" id="update_id" >
@@ -48,20 +48,6 @@
                       </form>
                 </div>
 
-
-                <div id="myForm">
-                        
-                    <h2>Update Story</h2>
-                    <form action='' method="post" id='my-form' onsubmit="updateStory()" >
-                        <label for="title">Title</label>
-                        <input type="text" id="update_title"  placeholder="Your title..">
-                        <input type="hidden" id="update_id" >
-                        <label for="body">Body</label>
-                        <textarea placeholder="Write yor Story Here" id="update_body" cols="30" rows="5" ></textarea>
-                
-                        <input type="submit" class="btn" value="+ UPDATE STORY"   >
-                      </form>
-                </div>
 
                 <div class="story">
                     <h3 id='story_title'></h3>

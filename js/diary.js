@@ -234,21 +234,25 @@ const deleteStory = (story_id) => {
 
 }
 
-const updateStory = () => {
-  let title = document.getElementById("update_title");
-  let content = document.getElementById("update_content");
-  let id = document.getElementById("update_id");
+const updateStory = (event) => {
+    event.preventDefault();
+    if(event){
 
-  let notes = getDataFromStorage();
+        let title = document.getElementById("update_title").value;
+        let content = document.getElementById("update_body").value;
+        let id = document.getElementById("update_id").value;
 
-  let noteIndex = notes.findIndex((obj => obj.id == id));
+          let notes = getDataFromStorage();
 
-  notes[noteIndex].title = title.value;
-  notes[noteIndex].content = content.value;
+          let noteIndex = notes.findIndex((obj => obj.id == id));
 
-  localStorage.setItem("notes", JSON.stringify(notes));
+          notes[noteIndex].title = title;
+          notes[noteIndex].content = content;
 
-  console.log(id);
+          localStorage.setItem("notes", JSON.stringify(notes));
+
+          location.reload();
+    }
 }
 
 const showStory = (id) => {
