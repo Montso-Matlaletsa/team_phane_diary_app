@@ -103,7 +103,7 @@ body{
   .flex-grid {
     display: flex;
   }
-  .flex-grid .col {
+  .flex-grid .col1 {
     flex: 1;
     margin-right: 20px;
     margin-left:20px
