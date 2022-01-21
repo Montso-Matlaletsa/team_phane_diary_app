@@ -220,7 +220,6 @@ const editForm = (story_id) => {
   let id = document.querySelector("#update_id");
   
   let notes = getDataFromStorage();
-  let myNote = []
 
   let noteIndex = notes.findIndex((obj => obj.id == story_id));
 
@@ -231,7 +230,15 @@ const editForm = (story_id) => {
 }
 
 const deleteStory = (story_id) => {
+     let notes = getDataFromStorage();
 
+    notes = notes.filter(function(e) {
+      return e.id != story_id;
+    });
+
+    localStorage.setItem("notes", JSON.stringify(notes));
+    location.reload();
+    
 }
 
 const updateStory = (event) => {
