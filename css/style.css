@@ -146,4 +146,12 @@ body{
       color: grey;
   }
 
+  #myForm{
+    display: none;
+  }
+
+  .story{
+    display: none;
+  }
+
   
