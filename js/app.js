@@ -142,6 +142,15 @@ const showDate = (e) => {
     alert(date)
 }
 
+// delete all story(note), the (e) stands for an eventlistener
+
+
+const deleteStory = (e) => {
+    e.preventDefault();
+    let id = document.querySelector('#addForm').value;
+    alert(id)
+}
+
 
 
 
