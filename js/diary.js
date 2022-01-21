@@ -292,6 +292,9 @@ const bookmark = (story_id)=>{
 
 }
 
+const deleteStory = (e) => {
+    localStorage.removeItem("notes")
+}
 
 
 
