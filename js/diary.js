@@ -17,19 +17,6 @@ function Note(id, title, content,date, bookmarked){
   this.bookmarked = bookmarked
 }
 
-// Add eventListeners 
-
-// function eventListeners(){
-//   document.addEventListener("DOMContentLoaded", displayNotes);
-//   document.getElementById("add-note-btn").addEventListener("click", addNewNote); 
-//   noteListDiv.addEventListener("click", deleteNote);
-//   document.getElementById("delete-all-btn").addEventListener("click", deleteAllNotes);
- 
-// }
-
-
-// eventListeners();
-
 
 // get item from storage 
 
@@ -81,71 +68,6 @@ function validateInput(title, content){
     
   }, 1600);
 }
-
-
-// create a new story(note) div
-
-function createNote(noteItem){
-  const div = document.createElement("div");
-  div.classList.add("note-item");
-  div.setAttribute("data-id", noteItem.id);
-  div.innerHTML = `
-        <h3>${noteItem.title}</h3>
-        <p>${noteItem.content}</p>
-        <button type = "button" class = "btn delete-note-btn">
-        <span><i class = "fas fa-trash"></i></span>
-        Delete
-        </buttton>
-  `;
-  //noteListDiv.appendChild(div);
-}
-
-
-// display all the stories(notes) from our local storage
-// after creating the local storage i commented it out in the html
-function displayNotes(){
-  let notes = getDataFromStorage();
-  if(notes.length > 0) {
-    noteID = notes[notes.length - 1].id;
-    noteID++;
-  }else {
-    noteID = 1;
-  }
-  notes.forEach(item => {
-    createNote(item);
-  });
-}
-
-
-// delete a story(note), the (e) stands for an eventlistener
-function deleteNote(e){
-  if (e.target.classList.contains("deleteBtn")) {
-    
-    e.target.parentElement.remove();
-    let divID = e.target.parentElement.dataset.id;
-    let notes = getDataFromStorage();
-    let newNotesList = notes.filter(item => {
-      return item.id !== parseInt(divID);
-    });
-    localStorage.setItem("notes", JSON.stringify(newNotesList));
-  }
-}
-
-
-// delete all stories(notes) 
-function deleteAllNotes(){
-  localStorage.removeItem("notes");
-  let noteList = document.querySelectorAll(".note-item");
-  if(noteList.length > 0){
-    noteList.forEach(item => {
-      noteListDiv.removeChild(item);
-    });
-  }
-  noteID = 1 //resetting noteID to 1
-}
-
-
-
 
 //Display stories to the screen
 const showStories = (stories) =>{
